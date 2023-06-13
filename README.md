@@ -18,7 +18,7 @@ cd ~/ros2_ws/src
 git clone https://github.com/mas-group/robile_description.git -b ros2_humble
 git clone https://github.com/kelo-robotics/robile_gazebo.git -b ros2_humble
 
-cd ~/catkin_ws
+cd ~/ros2_ws  #Very important to do below command only from worspace folder and always
 sudo rosdep init
 rosdep update
 rosdep install -i --from-path src --rosdistro humble -y
