@@ -16,7 +16,7 @@ Assuming you have a catkin workspace at `~/ros2_ws`, execute the below commands 
 cd ~/ros2_ws/src
 #git clone https://github.com/kelo-robotics/kelo_tulip.git #Dont do for simulation
 git clone https://github.com/mas-group/robile_description.git -b ros2_humble
-git clone https://github.com/kelo-robotics/robile_gazebo.git -b ros2_humble
+git clone https://github.com/mas-group/robile_gazebo.git -b ros2_humble
 
 cd ~/ros2_ws  #Very important to do below command only from worspace folder and always
 sudo rosdep init
