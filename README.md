@@ -7,24 +7,25 @@ Gazebo simulations for KELO ROBILE robots
 ## Installation
 In addition to a few ROS dependencies, this package also depends on the following packages provided by KELO-robotics:
 1. [kelo_tulip](https://github.com/kelo-robotics/kelo_tulip) [Optional: only if you want smart wheel emulated]
-2. [robile_description](https://github.com/kelo-robotics/robile_description)
+2. [robile_description](https://github.com/mas-group/robile_description/tree/ros2_humble)
 
 Assuming you have a catkin workspace at `~/ros2_ws`, execute the below commands to install the simulator and its dependencies
 
 ```sh
 
-cd ~/catkin_ws/src
-git clone https://github.com/kelo-robotics/kelo_tulip.git
-git clone https://github.com/kelo-robotics/robile_description.git
-git clone https://github.com/kelo-robotics/robile_gazebo.git
+cd ~/ros2_ws/src
+#git clone https://github.com/kelo-robotics/kelo_tulip.git #Dont do for simulation
+git clone https://github.com/mas-group/robile_description.git -b ros2_humble
+git clone https://github.com/kelo-robotics/robile_gazebo.git -b ros2_humble
 
 cd ~/catkin_ws
-rosdep install --from-paths src --ignore-src -r -y
+sudo rosdep init
+rosdep update
+rosdep install -i --from-path src --rosdistro humble -y
 
-catkin build kelo_tulip # you will need to enter your password for the kelo_tulip build to complete
 
 colcon build --packages-select robile_gazebo robile_description 
-source ~/catkin_ws/devel/setup.bash
+source ~/ros2_ws/install/setup.bash 
 ```
 
 ## Usage
